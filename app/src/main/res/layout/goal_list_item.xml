@@ -3,32 +3,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:id="@+id/parent_layout" android:clickable="true">
+                android:id="@+id/parent_layout"
+                android:clickable="true"
+                android:focusable="true">
 
-    <ImageView
+    <com.xsolla.hackathon4.CircularProgressBar
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:id="@+id/image"
-            android:src="@mipmap/ic_launcher"/>
+            android:id="@+id/goalprogress"
+            progressWidth="10"
+            />
+
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Goal Name"
             android:id="@+id/name"
-            android:layout_toRightOf="@+id/image"
+            android:layout_toRightOf="@+id/goalprogress"
             android:textColor="#000"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:textSize="22sp"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Goal Description"
-            android:id="@+id/description"
+            android:text="Deadline"
+            android:id="@+id/deadline"
             android:textColor="#FF808080"
-            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
             android:textSize="18sp" android:layout_marginTop="8dp" android:layout_below="@+id/name"
-            android:layout_toEndOf="@+id/image"/>
+            android:layout_toEndOf="@+id/goalprogress"/>
+    <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="15dp" android:layout_below="@+id/goalprogress"
+            android:layout_alignParentEnd="true" android:layout_marginEnd="14dp" android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"/>
 
 </RelativeLayout>
