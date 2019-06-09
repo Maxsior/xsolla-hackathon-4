@@ -1,13 +1,9 @@
 package com.xsolla.hackathon4
 
-import java.util.*
-
-enum class Period {
-    ONCE, DAILY, WEEKLY, MONTHLY
-}
+import java.time.LocalDate
 
 class Task (
     val name: String,
-    var done: Date?,
-    val period: Period
+    var done: LocalDate?,
+    val period: Int
 )

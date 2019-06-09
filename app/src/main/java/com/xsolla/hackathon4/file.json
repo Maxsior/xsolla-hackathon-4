@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Цель НЕ всё",
+    "deadline": "2019-06-09T00:31:12.106Z",
+    "template": "Ничо не хочу",
+    "vars": [],
+    "tasks": [],
+    "motivation": "",
+    "services": [],
+    "progress": 13
+  },
+  {
+    "name": "Цель всё",
+    "deadline": "2019-06-09T00:31:12.106Z",
+    "template": "Всё хочу",
+    "vars": [],
+    "tasks": [],
+    "motivation": "",
+    "services": [],
+    "progress": 100
+  }
+]
+
+class Task (
+val name: String,
+var done: Date?,
+val period: Period
+)
+

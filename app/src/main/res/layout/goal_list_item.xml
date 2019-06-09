@@ -5,7 +5,8 @@
                 android:padding="15dp"
                 android:id="@+id/parent_layout"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:onClick="goalClicked">
 
     <com.xsolla.hackathon4.CircularProgressBar
             android:layout_width="80dp"

@@ -21,8 +21,9 @@ class GoalAdapter(var goals: ArrayList<Goal>) : RecyclerView.Adapter<GoalAdapter
         var deadline : TextView = view.findViewById(R.id.deadline)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): GoalViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, index: Int): GoalViewHolder {
         val view = LayoutInflater.from(parent.getContext()).inflate(R.layout.goal_list_item, parent, false)
+        view.tag = goals[index]
         return GoalViewHolder(view)
     }
 
@@ -31,7 +32,7 @@ class GoalAdapter(var goals: ArrayList<Goal>) : RecyclerView.Adapter<GoalAdapter
         with(holder) {
             name.setText(goals[index].name)
             deadline.setText(goals[index].deadline.toString())
-            progressBar.setProgress(50)
+            progressBar.setProgress(goals[index].progress)
         }
     }
 
