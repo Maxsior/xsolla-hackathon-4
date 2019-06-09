@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
+import java.time.LocalDate
+import java.time.Period
 
 class TaskAdapter(var tasks: ArrayList<Task>) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>(){
 
@@ -17,15 +19,18 @@ class TaskAdapter(var tasks: ArrayList<Task>) : RecyclerView.Adapter<TaskAdapter
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): TaskAdapter.TaskViewHolder {
-        val view = LayoutInflater.from(parent.getContext()).inflate(R.layout.goal_list_item, parent, false)
-        return TaskAdapter.TaskViewHolder(view)
+        val view = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_list_item, parent, false)
+        return TaskViewHolder(view)
     }
+
+    fun Period.getTotalDays() = this.years * 365 + this.months * 30 + this.days
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onBindViewHolder(holder: TaskAdapter.TaskViewHolder, index: Int) {
         with(holder) {
+            var period = Period.between(tasks[index].done, LocalDate.now())
             name.setText(tasks[index].name)
-            done.isChecked = tasks[index].done !== null
+            done.isChecked = tasks[index].done !== null && period.getTotalDays() <= tasks[index].period && tasks[index].period != 0
         }
     }
 
