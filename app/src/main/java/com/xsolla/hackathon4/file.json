@@ -7,7 +7,7 @@
     "tasks": [],
     "motivation": "",
     "services": [],
-    "progress": 13
+    "progress": 47
   },
   {
     "name": "Цель всё",
@@ -18,12 +18,35 @@
     "motivation": "",
     "services": [],
     "progress": 100
+  },
+  {
+    "name": "Цель почти",
+    "deadline": "2019-06-09T07:31:12.106Z",
+    "template": "Ещё хочу",
+    "vars": [],
+    "tasks": [],
+    "motivation": "",
+    "services": [],
+    "progress": 90
+  },
+  {
+    "name": "Цель почти",
+    "deadline": "2019-06-09T07:31:12.106Z",
+    "template": "Ещё хочу",
+    "vars": [],
+    "tasks": [],
+    "motivation": "",
+    "services": [],
+    "progress": 90
+  },
+  {
+    "name": "Цель чуток",
+    "deadline": "2019-06-09T07:31:12.106Z",
+    "template": "уже не хочу",
+    "vars": [],
+    "tasks": [],
+    "motivation": "",
+    "services": [],
+    "progress": 10
   }
 ]
-
-class Task (
-val name: String,
-var done: Date?,
-val period: Period
-)
-

@@ -11,7 +11,7 @@ import android.widget.TextView
 
 class GoalAdapter(var goals: ArrayList<Goal>) : RecyclerView.Adapter<GoalAdapter.GoalViewHolder>(){
 
-    class GoalViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class GoalViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
         var progressBar : CircularProgressBar = view.findViewById(R.id.goalprogress)
         init {
             progressBar.setProgressWidth(10)
@@ -23,7 +23,6 @@ class GoalAdapter(var goals: ArrayList<Goal>) : RecyclerView.Adapter<GoalAdapter
 
     override fun onCreateViewHolder(parent: ViewGroup, index: Int): GoalViewHolder {
         val view = LayoutInflater.from(parent.getContext()).inflate(R.layout.goal_list_item, parent, false)
-        view.tag = goals[index]
         return GoalViewHolder(view)
     }
 
@@ -33,6 +32,7 @@ class GoalAdapter(var goals: ArrayList<Goal>) : RecyclerView.Adapter<GoalAdapter
             name.setText(goals[index].name)
             deadline.setText(goals[index].deadline.toString())
             progressBar.setProgress(goals[index].progress)
+            view.tag = goals[index]
         }
     }
 

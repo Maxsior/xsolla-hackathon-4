@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.time.LocalDate
@@ -27,10 +28,10 @@ class MainActivity : AppCompatActivity() {
     "deadline": "2019-06-09T00:31:12.106Z",
     "template": "Ничо не хочу",
     "vars": [],
-    "tasks": [],
+    "tasks": [ {"name": "Купить книгу", "done": "2019-05-09T12:11:45:11Z", "period": 0}, {"name": "Читать 10 страниц в день", "done": "2019-05-09T12:11:45:11Z", "period": 7}],
     "motivation": "",
-    "services": [],
-    "progress": 13
+    "services": ["http://stepik.org/", "http://stepik.org/", "http://stepik.org/", "http://stepik.org/", "http://stepik.org/", "http://stepik.org/"],
+    "progress": 47
   },
   {
     "name": "Цель всё",
@@ -41,6 +42,36 @@ class MainActivity : AppCompatActivity() {
     "motivation": "",
     "services": [],
     "progress": 100
+  },
+  {
+    "name": "Цель тоже всё",
+    "deadline": "2019-06-09T07:31:12.106Z",
+    "template": "больше хочу",
+    "vars": [],
+    "tasks": [],
+    "motivation": "",
+    "services": [],
+    "progress": 100
+  },
+  {
+    "name": "Цель почти",
+    "deadline": "2019-06-09T07:31:12.106Z",
+    "template": "Ещё хочу",
+    "vars": [],
+    "tasks": [],
+    "motivation": "",
+    "services": [],
+    "progress": 90
+  },
+  {
+    "name": "Цель чуток",
+    "deadline": "2019-06-09T07:31:12.106Z",
+    "template": "уже не хочу",
+    "vars": [],
+    "tasks": [],
+    "motivation": "",
+    "services": [],
+    "progress": 10
   }
 ]
 """)
@@ -63,6 +94,10 @@ class MainActivity : AppCompatActivity() {
         val goalIntent = Intent(this, GoalActivity::class.java)
         GoalActivity.goal = view.tag as Goal
         startActivity(goalIntent)
+    }
+
+    fun addGoal(view: View) {
+        Toast.makeText(this, "Шёл медведь по лесу, видит -- машина горит, сел в неё и сгорел", Toast.LENGTH_LONG).show()
     }
 
 
